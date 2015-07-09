@@ -1,0 +1,29 @@
+body {
+	box-sizing: border-box;
+	text-align: center;
+	font-family: "Helvetica", Arial, sans-serif;
+}
+
+header, .input, .output {
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+}
+
+.images {
+	display: inline-block;
+	margin: 2em;
+}
+
+.happyface {
+	width: 11em;
+}
+
+.logo {
+	width: 25em;
+}
+
+h1 {
+	margin: 0;
+	font-size: 4em;
+}
