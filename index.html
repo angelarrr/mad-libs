@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> <!-- ng-app="madLibs" -->
+<html lang="en" ng-app="">
 <head>
 	<meta charset="UTF-8">
 	<title>Angular Mad Libs</title>
@@ -7,7 +7,7 @@
 	<script data-require="angular.js@1.3.10" data-semver="1.3.10"  src="https://code.angularjs.org/1.3.10/angular.js"></script>
 	<script type="text/javascript" src="js/madLibs.js"></script>
 </head>
-<body>
+<body ng-controller="">
 
 	<header>
 		<div class="images">
@@ -20,14 +20,25 @@
 	</header>
 
 	<div class="input">
-
+		<h3>Provide the following words:</h3>
+		<form name="madForm" novalidate ng-submit="submit();">
+			<input type="text" placeholder="female name" ng-model="femaleName">
+			<input type="text" placeholder="job title" ng-model="jobTitle">
+			<input type="text" placeholder="tedious task" ng-model="tediousTask">
+			<input type="text" placeholder="dirty task" ng-model="dirtyTask">
+			<input type="text" placeholder="celebrity name" ng-model="celebrity">
+			<input type="text" placeholder="useless skill" ng-model="uselessSkill">
+			<input type="text" placeholder="adjective" ng-model="adjective">
+			<input type="text" placeholder="obnoxious celebrity name" ng-model="obnoxiousCelebrity">
+			<input type="number" placeholder="enter a huge number" ng-model="hugeNumber">
+		</form>
 	</div>
 
 	<div class="output">
 
-		{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated {{tedious task}} and {{dirty task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead. 
+		{{femaleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead. 
  
-		What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxiuous celbertity}} that not only loved {{dirty task}} but did it {{huge number}} faster. 
+		What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiuousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster. 
 
 	</div>
 	
