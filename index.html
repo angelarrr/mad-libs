@@ -20,6 +20,11 @@
 	</header>
 
 	<div class="input">
+		<h3>Select a gender:</h3> 
+			<input id="male" type="radio" ng-model="gender" ng-click="male()" value="male"><label for="male">Male</label>
+			<input id="female" type="radio" ng-model="gender" ng-click="female()" value="female"><label for="female">Female</label>
+
+
 		<h3>Provide the following words:</h3>
 			<input type="text" placeholder="name" ng-model="name" />
 			<input type="text" placeholder="job title" ng-model="jobTitle" />
@@ -36,9 +41,9 @@
 
 	<div class="output">
 
-		<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although she loved parts of her job, she absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with her life mentor <span>{{celebrity}}</span> who told her to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so she studied programming instead. 
+		<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead. 
  
-		What a great decision! With her new skills, <span>{{name}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiousCelebrity}}</span> that not only loved <span>{{dirtyTask}}</span> but did it <span>{{hugeNumber}}</span> faster. 
+		What a great decision! With {{hisHer}} new skills, <span>{{name}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiousCelebrity}}</span> that not only loved <span>{{dirtyTask}}</span> but did it <span>{{hugeNumber}}</span> faster. 
 
 	</div>
 	
