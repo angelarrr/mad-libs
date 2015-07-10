@@ -53,6 +53,13 @@ input[type='radio']:checked + label{
 	background-color: gray;
 }
 
+input[type='submit'] {
+	border: none;
+	padding: 1em;
+	cursor: pointer;
+	font-weight: bold;
+}
+
 span {
 	text-decoration: underline;
 }
@@ -62,4 +69,8 @@ span {
 	margin-top: 2em;
 	width: 60%;
 	line-height: 2em;
+}
+
+.hidden {
+	visibility: hidden;
 }

@@ -19,7 +19,7 @@
 		</div>
 	</header>
 
-	<div class="input">
+	<div class="input {{inputContainer}}">
 		<h3>Select a gender:</h3> 
 			<input id="male" type="radio" ng-model="gender" ng-click="male()" value="male"><label for="male">Male</label>
 			<input id="female" type="radio" ng-model="gender" ng-click="female()" value="female"><label for="female">Female</label>
@@ -36,10 +36,14 @@
 			<input type="text" placeholder="obnoxious celebrity name" ng-model="obnoxiousCelebrity" />
 			<input type="text" placeholder="enter a huge number" ng-model="hugeNumber" />
 
+			<p>
+				<input type="submit" ng-click="submit()" />
+			</p>
+
 			<hr />
 	</div>
 
-	<div class="output">
+	<div class="output {{outputContainer}}">
 
 		<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead. 
  

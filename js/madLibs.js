@@ -10,6 +10,7 @@ angular.module('madLibs', [])
 		$scope.obnoxiousCelebrity = "obnoxious celebrity";
 		$scope.hugeNumber = "enter a huge number";
 		$scope.gender = "";
+		$scope.outputContainer = "hidden";
 
 		$scope.male = function() {
 			$scope.heShe = "he";
@@ -21,5 +22,9 @@ angular.module('madLibs', [])
 			$scope.heShe = "she";
 			$scope.himHer = "her";
 			$scope.hisHer = "her";
-		}
+		};
+
+		$scope.submit = function() {
+			$scope.outputContainer = "";
+		};
 	});
