@@ -1,16 +1,6 @@
 angular.module('madLibs', [])
 	.controller('madController', function($scope) {
-		$scope.name = "name";
-		$scope.jobTitle = "job title";
-		$scope.tediousTask = "tedious task";
-		$scope.dirtyTask = "dirty task";
-		$scope.celebrity = "celebrity name";
-		$scope.uselessSkill = "useless skill";
-		$scope.adjective = "adjective";
-		$scope.obnoxiousCelebrity = "obnoxious celebrity";
-		$scope.hugeNumber = "enter a huge number";
-		$scope.gender = "";
-		$scope.outputContainer = "hidden";
+		$scope.display = 0;
 
 		$scope.male = function() {
 			$scope.heShe = "he";
@@ -24,7 +14,32 @@ angular.module('madLibs', [])
 			$scope.hisHer = "her";
 		};
 
-		$scope.submit = function() {
-			$scope.outputContainer = "";
+		$scope.submit = function(){
+			if ($scope.myForm.$valid) {
+				console.log('Form is valid!');
+				$scope.display = 1;
+			} else {
+				console.log('Form is not valid!');
+			}
 		};
+
+		$scope.reset = function() {
+			// reset display
+			$scope.display = 0;
+
+			// reset form to unsubmitted state
+			$scope.myForm.$setPristine();
+			$scope.myForm.$setUntouched();
+
+			$scope.name = "";
+			$scope.jobTitle = "";
+			$scope.tediousTask = "";
+			$scope.dirtyTask = "";
+			$scope.celebrity = "";
+			$scope.uselessSkill = "";
+			$scope.adjective = "";
+			$scope.obnoxiousCelebrity = "";
+			$scope.hugeNumber = "";
+		}
+				
 	});

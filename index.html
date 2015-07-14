@@ -19,37 +19,86 @@
 		</div>
 	</header>
 
-	<div class="input {{inputContainer}}">
-		<h3>Select a gender:</h3> 
-			<input id="male" type="radio" ng-model="gender" ng-click="male()" value="male"><label for="male">Male</label>
-			<input id="female" type="radio" ng-model="gender" ng-click="female()" value="female"><label for="female">Female</label>
+	<div class="input" ng-show="display == 0">
+		<form name="myForm" novalidate ng-submit="submit()">
+			<h3>Select a gender:</h3> 
+				<input id="male" type="radio" ng-model="gender" ng-click="male()" value="male"><label for="male">Male</label>
+				<input id="female" type="radio" ng-model="gender" ng-click="female()" value="female"><label for="female">Female</label>
 
 
-		<h3>Provide the following words:</h3>
-			<input type="text" placeholder="name" ng-model="name" />
-			<input type="text" placeholder="job title" ng-model="jobTitle" />
-			<input type="text" placeholder="tedious task" ng-model="tediousTask" />
-			<input type="text" placeholder="dirty task" ng-model="dirtyTask" />
-			<input type="text" placeholder="celebrity name" ng-model="celebrity" />
-			<input type="text" placeholder="useless skill" ng-model="uselessSkill" />
-			<input type="text" placeholder="adjective" ng-model="adjective" />
-			<input type="text" placeholder="obnoxious celebrity name" ng-model="obnoxiousCelebrity" />
-			<input type="text" placeholder="enter a huge number" ng-model="hugeNumber" />
+			<h3>Provide the following words:</h3>
+			<ul class="words-input">
+				<li>
+					<input type="text" name="name" placeholder="name" ng-model="name" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.name.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="jobTitle" placeholder="job title" ng-model="jobTitle" required />
+						<span ng-if="myForm.$submitted" ng-messages for="myForm.jobTitle.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="tediousTask" placeholder="tedious task" ng-model="tediousTask" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.tediousTask.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="dirtyTask" placeholder="dirty task" ng-model="dirtyTask" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.dirtyTask.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="celebrity" placeholder="celebrity name" ng-model="celebrity" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.celebrity.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="uselessSkill" placeholder="useless skill" ng-model="uselessSkill" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.uselessSkill.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="adjective" placeholder="adjective" ng-model="adjective" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.adjective.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="text" name="obnoxiousCelebrity" placeholder="obnoxious celebrity name" ng-model="obnoxiousCelebrity" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.obnoxiousCelebrity.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+				<li>
+					<input type="number" name="hugeNumber" placeholder="enter a huge number" ng-model="hugeNumber" required />
+					<span ng-if="myForm.$submitted" ng-messages for="myForm.hugeNumber.$error" class="error">
+						<ng-message when="required">Field is required!</ng-message>
+					</span>
+				</li>
+			</ul>
 
-			<p>
-				<input type="submit" ng-click="submit()" />
-			</p>
-
-			<hr />
+				<div class="submit-container">
+					<input type="submit" value="Generate Mad Lib" 	/>
+				</div>
+			</form>
 	</div>
 
-	<div class="output {{outputContainer}}">
+	<div class="output" ng-show="display == 1">
 
 		<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead. 
  
 		What a great decision! With {{hisHer}} new skills, <span>{{name}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiousCelebrity}}</span> that not only loved <span>{{dirtyTask}}</span> but did it <span>{{hugeNumber}}</span> faster. 
-
+			
+		<div class="submit-container">
+			<input class="reset" type="submit" ng-click="reset()" value="Reset Mad Lib" />
+		</div>
 	</div>
-	
 </body>
 </html>
