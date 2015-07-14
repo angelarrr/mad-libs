@@ -40,6 +40,7 @@ angular.module('madLibs', [])
 			$scope.adjective = "";
 			$scope.obnoxiousCelebrity = "";
 			$scope.hugeNumber = "";
+			$scope.gender = "";
 		}
 				
 	});

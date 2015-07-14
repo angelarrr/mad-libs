@@ -68,7 +68,7 @@ header, .input, .output {
 
 .submit-container {
 	text-align: center;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 ul {
@@ -80,6 +80,9 @@ ul {
 li {
 	display: inline-block;
 	width: 30%;
+	top: 0;
+	margin-bottom: 2em;
+	height: 3em;
 }
 
 .images {
@@ -108,7 +111,6 @@ h3 {
 input[type='text'], input[type="number"] {
 	outline: none;
 	padding: 1em;
-	margin: 1em;
 	width: 90%;
 }
 
@@ -141,6 +143,10 @@ input[type='submit'] {
 	font-weight: bold;
 }
 
+.error {
+	font-size: .5em;
+}
+
 span {
 	text-decoration: underline;
 }
@@ -154,8 +160,4 @@ span {
 	margin-top: 2em;
 	width: 60%;
 	line-height: 2em;
-}
-
-.hidden {
-	visibility: hidden;
 }

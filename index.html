@@ -22,65 +22,47 @@
 	<div class="input" ng-show="display == 0">
 		<form name="myForm" novalidate ng-submit="submit()">
 			<h3>Select a gender:</h3> 
-				<input id="male" type="radio" ng-model="gender" ng-click="male()" value="male"><label for="male">Male</label>
-				<input id="female" type="radio" ng-model="gender" ng-click="female()" value="female"><label for="female">Female</label>
-
+				<input name="male" id="male" type="radio" ng-model="gender" ng-click="male()" value="male" required /><label for="male">Male</label>
+				<input name="female" id="female" type="radio" ng-model="gender" ng-click="female()" value="female" required /><label for="female">Female</label>
+			<span class="error" ng-if="myForm.$submitted && myForm.gender.$error.required">You forgot to select a gender!!</span>
 
 			<h3>Provide the following words:</h3>
 			<ul class="words-input">
 				<li>
 					<input type="text" name="name" placeholder="name" ng-model="name" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.name.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.name.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="jobTitle" placeholder="job title" ng-model="jobTitle" required />
-						<span ng-if="myForm.$submitted" ng-messages for="myForm.jobTitle.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.jobTitle.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="tediousTask" placeholder="tedious task" ng-model="tediousTask" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.tediousTask.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.tediousTask.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="dirtyTask" placeholder="dirty task" ng-model="dirtyTask" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.dirtyTask.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.dirtyTask.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="celebrity" placeholder="celebrity name" ng-model="celebrity" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.celebrity.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.celebrity.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="uselessSkill" placeholder="useless skill" ng-model="uselessSkill" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.uselessSkill.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.uselessSkill.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="adjective" placeholder="adjective" ng-model="adjective" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.adjective.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.adjective.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="text" name="obnoxiousCelebrity" placeholder="obnoxious celebrity name" ng-model="obnoxiousCelebrity" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.obnoxiousCelebrity.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.obnoxiousCelebrity.$error.required">Field is Required!</span>
 				</li>
 				<li>
 					<input type="number" name="hugeNumber" placeholder="enter a huge number" ng-model="hugeNumber" required />
-					<span ng-if="myForm.$submitted" ng-messages for="myForm.hugeNumber.$error" class="error">
-						<ng-message when="required">Field is required!</ng-message>
-					</span>
+					<span class="error" ng-if="myForm.$submitted && myForm.hugeNumber.$error.required">A number is Required!</span>
 				</li>
 			</ul>
 
