@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Angular Mad Libs</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.16/angular-animate.js"></script>
 	<script src="js/madLibs.js"></script>
 </head>
 <body ng-controller="madController">
@@ -19,7 +20,7 @@
 		</div>
 	</header>
 
-	<div class="input" ng-show="display == 0">
+	<section class="input animate-show" ng-show="display == 0">
 		<form name="myForm" novalidate ng-submit="submit()">
 			<h3>Select a gender:</h3> 
 			<input name="gender" id="male" type="radio" ng-model="gender" ng-click="male()" value="male" required /><label for="male">Male</label>
@@ -71,17 +72,18 @@
 					<input type="submit" value="Generate Mad Lib" ng-disabled="!myForm.$valid" />
 				</div>
 			</form>
-	</div>
+	</section>
 
-	<div class="output" ng-show="display == 1">
-
-		<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead. 
+	<section class="output animate-show" ng-hide="display == 0">
+		<div class="content">
+			<span>{{name}}</span> was a <span>{{jobTitle}}</span> who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTask}}</span>. So, <span>{{name}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead. 
  
-		What a great decision! With {{hisHer}} new skills, <span>{{name}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiousCelebrity}}</span> that not only loved <span>{{dirtyTask}}</span> but did it <span>{{hugeNumber}}</span> faster. 
+			What a great decision! With {{hisHer}} new skills, <span>{{name}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiousCelebrity}}</span> that not only loved <span>{{dirtyTask}}</span> but did it <span>{{hugeNumber}}</span> faster. 
 			
-		<div class="submit-container">
-			<input class="reset" type="submit" ng-click="reset()" value="Reset Mad Lib" />
+			<div class="submit-container">
+				<input class="reset" type="submit" ng-click="reset()" value="Reset Mad Lib" />
+			</div>
 		</div>
-	</div>
+	</section>
 </body>
 </html>
