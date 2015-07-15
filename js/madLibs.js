@@ -41,6 +41,6 @@ angular.module('madLibs', [])
 			$scope.obnoxiousCelebrity = "";
 			$scope.hugeNumber = "";
 			$scope.gender = "";
-		}
+		};
 				
 	});

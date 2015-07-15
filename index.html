@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Angular Mad Libs</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<script data-require="angular.js@1.3.10" data-semver="1.3.10"  src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
 	<script src="js/madLibs.js"></script>
 </head>
 <body ng-controller="madController">
@@ -22,9 +22,10 @@
 	<div class="input" ng-show="display == 0">
 		<form name="myForm" novalidate ng-submit="submit()">
 			<h3>Select a gender:</h3> 
-				<input name="male" id="male" type="radio" ng-model="gender" ng-click="male()" value="male" required /><label for="male">Male</label>
-				<input name="female" id="female" type="radio" ng-model="gender" ng-click="female()" value="female" required /><label for="female">Female</label>
-			<span class="error" ng-if="myForm.$submitted && myForm.gender.$error.required">You forgot to select a gender!!</span>
+			<input name="gender" id="male" type="radio" ng-model="gender" ng-click="male()" value="male" required /><label for="male">Male</label>
+			<input name="gender" id="female" type="radio" ng-model="gender" ng-click="female()" value="female" required /><label for="female">Female</label>
+
+			<div class="error" ng-if="myForm.$submitted && myForm.gender.$error.required">You forgot to select a gender!!</div>
 
 			<h3>Provide the following words:</h3>
 			<ul class="words-input">
@@ -67,7 +68,7 @@
 			</ul>
 
 				<div class="submit-container">
-					<input type="submit" value="Generate Mad Lib" 	/>
+					<input type="submit" value="Generate Mad Lib" ng-disabled="!myForm.$valid" />
 				</div>
 			</form>
 	</div>
